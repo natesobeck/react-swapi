@@ -17,8 +17,8 @@ const StarshipList = () => {
 
   return (  
     <main>
-      {starshipList.map(starship => 
-        <Starship key={starship.name} starship={starship}/>
+      {starshipList.map((starship, i)=> 
+        <Starship key={starship.name} starship={starship} id={i + 2} />
       )}
     </main>
   )
