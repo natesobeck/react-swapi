@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getStarships } from "../../services/sw-api"
+import Starship from "./Starship"
 
 const StarshipList = () => {
   const [starshipList, setStarshipList] = useState({})
@@ -16,7 +17,9 @@ const StarshipList = () => {
 
   return (  
     <main>
-      {starshipList.map(starship => <div key={starship.name}>{starship.name}</div>)}
+      {starshipList.map(starship => 
+        <Starship key={starship.name} starship={starship}/>
+      )}
     </main>
   )
 }
