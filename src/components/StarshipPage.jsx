@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom"
 import { getStarship } from "../../services/sw-api"
 import { Link } from "react-router-dom"
 
+import './StarshipPage.css'
+
+
 const StarshipPage = () => {
   const [starship, setStarship] = useState({})
   const { starshipName } = useParams()
@@ -19,9 +22,11 @@ const StarshipPage = () => {
 
   return (
     <main>
-      <h3>NAME: {starship.name}</h3>
-      <p>MODEL: {starship.model}</p>
-      <Link to={`/starships`}>RETURN</Link>
+      <div className="starship-details">
+        <h3>NAME: {starship.name}</h3>
+        <p>MODEL: {starship.model}</p>
+        <Link to={`/starships`}>ALL STARSHIPS</Link>
+      </div>
     </main>
   )
 }
